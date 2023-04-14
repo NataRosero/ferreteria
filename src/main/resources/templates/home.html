@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Ferreteria Jall</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+     <body>
+         <div><h1>Ferretería Jall</h1></div>
+          <div th:if ="${articulos!=null and !articulos.empty}">
+         <table border = "0" style="text-align:center">     	
+            
+            
+            <tr><!-- comment -->
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Existencias</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr> 
+            <tr th:each="a:${articulos}">
+                    <td th:text="${a.id}">Muestra Id</td>
+                    <td th:text="${p.nombre}">Muestra nombre</td>
+                    <td th:text="${p.descripcion}">Muestra descripcion</td>
+                    <td th:text="${p.existencias}">Muestra existencias</td>
+                    <td th:text="${p.precio}">Muestra precio</td>
+                    <td th:text="${p.imagen}">Muestra imagen</td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${articulos==null or articulos.empty}"/>
+            No hay información
+    </body>
+</html>
